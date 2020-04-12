@@ -25,11 +25,7 @@ Check the packages needed or simply run the command
 ```console
 ❱❱❱ python test.py --gpu 1 --epoch 10 --vis True
 ```
-Then, the visualized heatmaps will be generated in the vis_dir folder. An example is as follows:
-
-<p align="center">
-<img src="example.jpg" width="88%" />
-</p>
+Then, the visualized heatmaps will be generated in the vis_dir folder. 
 
 ***Training***
 ```console
