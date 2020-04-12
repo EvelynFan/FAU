@@ -15,7 +15,7 @@ Implementation of the paper:
 - Python 3.7
 - Tensorflow 1.14.0
 
-## Dependency
+## Dependencies
 Check the packages needed or simply run the command
 ```console
 ❱❱❱ pip install -r requirements.txt
@@ -23,13 +23,12 @@ Check the packages needed or simply run the command
 
 ***Demo***
 
-***Training & Testing***
-For training:
+***Training***
 ```console
 ❱❱❱ python train.py --gpu 1
 ```
-For testing:
+***Training***
 ```console
-❱❱❱ python test.py --gpu 1 --test_epoch 10
+❱❱❱ python test.py --gpu 1 --epoch 10
 ```
 
