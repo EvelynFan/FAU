@@ -11,9 +11,9 @@ Implementation of the paper:
 </p>
 
 ## Environment
-Ubuntu 18.04.4
-python 3.7
-Tensorflow 1.14.0
+- Ubuntu 18.04.4
+- Python 3.7
+- Tensorflow 1.14.0
 
 ## Dependency
 Check the packages needed or simply run the command
@@ -24,10 +24,11 @@ Check the packages needed or simply run the command
 ***Demo***
 
 ***Training & Testing***
+For training:
 ```console
 ❱❱❱ python train.py --gpu 1
 ```
-Training baseline without persona input
+For testing:
 ```console
 ❱❱❱ python test.py --gpu 1 --test_epoch 10
 ```
