@@ -45,7 +45,6 @@ def test_net(tester, data):
             crop_infos.append(crop_info)
         imgs = np.array(imgs)
         crop_infos = np.array(crop_infos)
- 
         heatmap = tester.predict_one([imgs],batch_id)[0]    
         
         for image_id in range(start_id, end_id):
@@ -63,7 +62,7 @@ def test_net(tester, data):
                     y += diff[1] * .25
                 AUs_result[image_id, j, :2] = (x * cfg.input_shape[1] / cfg.output_shape[1], y * cfg.input_shape[0] / cfg.output_shape[0])
                 AUs_result[image_id, j, 2] = float(hm_j.max()) / 255.0 
-            # map back to original images
+
             for j in range(cfg.num_AU_points):
                 AUs_result[image_id, j, 0] = AUs_result[image_id, j, 0] / cfg.input_shape[1] * (\
                 crop_infos[image_id - start_id][2] - crop_infos[image_id - start_id][0]) + crop_infos[image_id - start_id][0]
@@ -73,9 +72,7 @@ def test_net(tester, data):
         for i in range(len(AUs_result)):
             result = dict(AUs=AUs_result[i].round(3).tolist())     
             dump_results.append(result)
-
     return dump_results
-
 
 def test(test_model):
     d = cfg.dataset
