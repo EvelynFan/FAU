@@ -21,12 +21,14 @@ parser = argparse.ArgumentParser(description='Test')
 parser.add_argument('--gpu',default='0', type=str, dest='gpu')
 parser.add_argument('--epoch', type=str, dest='epoch')
 parser.add_argument('--vis', default=False, dest='vis')
+parser.add_argument('--demo', default=False, dest='demo')
 
 def main():
     global args
     args = parser.parse_args()
     os.environ["CUDA_VISIBLE_DEVICES"] = args.gpu
     cfg.set_vis(args.vis)
+    cfg.set_demo(args.demo)
     test(int(args.epoch))
 
 def test_net(tester, data):
