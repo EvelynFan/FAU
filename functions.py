@@ -5,6 +5,7 @@ from config import cfg
 import random
 import time
 import math
+cur_dir = os.path.dirname(os.path.abspath(__file__))
 
 def get_lr(epoch):
     for e in cfg.lr_dec_epoch:
@@ -23,6 +24,9 @@ def denormalize_input(img):
 
 def generate_batch(d, stage='train'):
     img = cv2.imread(d['imgpath'], cv2.IMREAD_COLOR | cv2.IMREAD_IGNORE_ORIENTATION)
+    if cfg.demo:
+        path_new = cur_dir+d['imgpath']
+        img = cv2.imread(path_new, cv2.IMREAD_COLOR | cv2.IMREAD_IGNORE_ORIENTATION)
     if img is None:
         print('cannot read ' + d['imgpath'])
         assert 0

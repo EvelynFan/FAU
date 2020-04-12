@@ -41,6 +41,8 @@ class Config:
     display = 1
     def set_vis(self, vis=False):
         self.vis = vis
+    def set_demo(self, demo=False):
+        self.demo = demo
 
 cfg = Config()
 
