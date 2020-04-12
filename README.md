@@ -21,11 +21,18 @@ Check the packages needed or simply run the command
 ❱❱❱ pip install -r requirements.txt
 ```
 
+***Preparation***
+For data preparation, please make a request for the [BP4D database](http://www.cs.binghamton.edu/~lijun/Research/3DFE/3DFE_Analysis.html) and the [DISFA database](http://mohammadmahoor.com/disfa/). For annotation files, you need to convert them into json format.
+
+The backbone model is initialized from the pretrained [ResNet-V1-50](https://github.com/tensorflow/models/tree/master/research/slim). Please download it under `${DATA_ROOT}`. You can change default path by modifying `config.py`.
+
 ***Demo***
+Download the pretrained model from [GoogleDrive]() and put it under `${DATA_ROOT}/output/models/`.
+
 ```console
 ❱❱❱ python demo.py --gpu 1 --epoch 10 
 ```
-Then, the visualized heatmaps will be generated in the vis_dir folder. 
+Then, the visualized heatmaps will be generated in the `vis_dir` folder. 
 
 ***Training***
 ```console
@@ -36,3 +43,11 @@ Then, the visualized heatmaps will be generated in the vis_dir folder.
 ❱❱❱ python test.py --gpu 1 --epoch 10
 ```
 
+## Citation
+
+    @inproceedings{fan2020fau,
+        title = {Facial Action Unit Intensity Estimation via Semantic Correspondence Learning with Dynamic Graph Convolution},
+        author = {Fan, Yingruo and Lam, Jacqueline and Li, Victor},
+        booktitle = {Thirty-Fourth AAAI Conference on Artificial Intelligence},
+        year={2018}
+    }
