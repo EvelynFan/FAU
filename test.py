@@ -20,11 +20,13 @@ import argparse
 parser = argparse.ArgumentParser(description='Test')
 parser.add_argument('--gpu',default='0', type=str, dest='gpu')
 parser.add_argument('--epoch', type=str, dest='epoch')
+parser.add_argument('--vis', default=False, dest='vis')
 
 def main():
     global args
     args = parser.parse_args()
     os.environ["CUDA_VISIBLE_DEVICES"] = args.gpu
+    cfg.set_vis(args.vis)
     test(int(args.epoch))
 
 def test_net(tester, data):
@@ -80,7 +82,7 @@ def test(test_model):
     tester = Tester(Model_graph(), cfg)
     tester.load_weights(test_model)
     result = test_net(tester, data)
-    d.evaluation(result, cfg.output_dir, cfg.testset)
+    d.evaluation(result, cfg.output_dir)
 
 if __name__ == '__main__':
     main()

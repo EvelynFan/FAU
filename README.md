@@ -7,7 +7,7 @@ Implementation of the paper:
 ## Overview
 
 <p align="center">
-<img src="framework.png" width="88%" />
+<img src="framework.jpg" width="88%" />
 </p>
 
 ## Environment
@@ -22,6 +22,14 @@ Check the packages needed or simply run the command
 ```
 
 ***Demo***
+```console
+❱❱❱ python test.py --gpu 1 --epoch 10 --vis True
+```
+Then, the visualized heatmaps will be generated in the vis_dir folder. An example is as follows:
+
+<p align="center">
+<img src="example.jpg" width="88%" />
+</p>
 
 ***Training***
 ```console

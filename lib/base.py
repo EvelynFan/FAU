@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# Modified from https://github.com/mks0601/TF-SimpleHumanPose
+### modified from https://github.com/mks0601/TF-SimpleHumanPose
 import tensorflow as tf
 import tensorflow.contrib.slim as slim
 import numpy as np
@@ -386,6 +386,7 @@ class Tester(Base):
             tmpimg = denormalize_input(tmpimg)
             tmpimg = tmpimg.astype('uint8') 
             out_map = self.sess.run([*self.net.get_outputs()],feed_dict=feed_dict)
+            count = 1
             for i in range(self.cfg.num_AU_points): #10,24
                 AU = out_map[0][:,:,:,i]
                 heatmap = np.squeeze(AU)/5.0#out_map[0] means the first in the list,[:,:,:,0] means AU1
@@ -398,7 +399,8 @@ class Tester(Base):
                     final_img2 = cv2.applyColorMap(cv2.resize(heatmap_,(256,256)), cv2.COLORMAP_JET)
                 if i%2 == 1:
                     final = cv2.resize(0.5*final_img+0.5*final_img2+0.5*tmpimg,self.cfg.input_shape)
-                    cv2.imwrite(cfg.vis_dir+"/"+str(itr)+'heatmap'+str(i)+'.jpg',final)
+                    cv2.imwrite(cfg.vis_dir+"/frame"+str(itr+1)+'_heatmap_AU'+str(count)+'.jpg',final)
+                    count += 1
 
         self.gpu_timer.toc()
 
