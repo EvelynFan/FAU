@@ -22,11 +22,13 @@ Check the packages needed or simply run the command
 ```
 
 ***Preparation***
+
 For data preparation, please make a request for the [BP4D database](http://www.cs.binghamton.edu/~lijun/Research/3DFE/3DFE_Analysis.html) and the [DISFA database](http://mohammadmahoor.com/disfa/). For annotation files, you need to convert them into json format.
 
 The backbone model is initialized from the pretrained [ResNet-V1-50](https://github.com/tensorflow/models/tree/master/research/slim). Please download it under `${DATA_ROOT}`. You can change default path by modifying `config.py`.
 
 ***Demo***
+
 Download the pretrained model from [GoogleDrive]() and put it under `${DATA_ROOT}/output/models/`.
 
 ```console
