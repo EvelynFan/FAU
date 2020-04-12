@@ -1,0 +1,9 @@
+numpy>=1.7.1
+scipy>=0.13.2
+matplotlib
+setproctitle
+opencv-python
+pillow
+gast-0.3.3
+msgpack_numpy
+msgpack
