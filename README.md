@@ -21,9 +21,15 @@ Check the packages needed or simply run the command
 ❱❱❱ pip install -r requirements.txt
 ```
 
-***Preparation***
+***Datasets***
 
-For data preparation, please make a request for the [BP4D database](http://www.cs.binghamton.edu/~lijun/Research/3DFE/3DFE_Analysis.html) and the [DISFA database](http://mohammadmahoor.com/disfa/). For annotation files, you need to convert them into json format.
+For data preparation, please make a request for the [BP4D database](http://www.cs.binghamton.edu/~lijun/Research/3DFE/3DFE_Analysis.html) and the [DISFA database](http://mohammadmahoor.com/disfa/). 
+
+***Data Preprocessing***
+
+The [Dlib](http://dlib.net/) library is utilized to locate the 68 facial landmarks for defining AU locations. The face images are cropped and resized to 256*256 pixels. For annotation files, you need to convert them into json format and make them look like `[{imgpath:" ", AUs:[AU1_coord_x,AU1_coord_y,AU1_intensity, ...]}, ...]`. An example is provided in `examples/train_example.json`. 
+
+***Backbone Model***
 
 The backbone model is initialized from the pretrained [ResNet-V1-50](https://github.com/tensorflow/models/tree/master/research/slim). Please download it under `${DATA_ROOT}`. You can change default path by modifying `config.py`.
 
@@ -48,7 +54,8 @@ Then, the visualized heatmaps will be generated in the `vis_dir` folder.
 ## Citation
 
     @inproceedings{fan2020fau,
-        title = {Facial Action Unit Intensity Estimation via Semantic Correspondence Learning with Dynamic Graph Convolution},
+        title = {Facial Action Unit Intensity Estimation via Semantic 
+            Correspondence Learning with Dynamic Graph Convolution},
         author = {Fan, Yingruo and Lam, Jacqueline and Li, Victor},
         booktitle = {Thirty-Fourth AAAI Conference on Artificial Intelligence},
         year={2018}
