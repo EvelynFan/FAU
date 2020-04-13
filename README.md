@@ -55,8 +55,8 @@ Then, the visualized heatmaps will be generated in the `vis_dir` folder.
 
     @inproceedings{fan2020fau,
         title = {Facial Action Unit Intensity Estimation via Semantic 
-            Correspondence Learning with Dynamic Graph Convolution},
+        Correspondence Learning with Dynamic Graph Convolution},
         author = {Fan, Yingruo and Lam, Jacqueline and Li, Victor},
         booktitle = {Thirty-Fourth AAAI Conference on Artificial Intelligence},
-        year={2018}
+        year={2020}
     }
