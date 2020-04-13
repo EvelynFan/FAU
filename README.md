@@ -46,9 +46,9 @@ Then, the visualized heatmaps will be generated in the `vis_dir` folder.
 ```console
 ❱❱❱ python train.py --gpu 1
 ```
-***Training***
+***Testing***
 ```console
-❱❱❱ python test.py --gpu 1 --epoch 10
+❱❱❱ python test.py --gpu 1 --epoch *
 ```
 
 ## Citation
