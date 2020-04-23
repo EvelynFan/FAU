@@ -35,12 +35,16 @@ The backbone model is initialized from the pretrained [ResNet-V1-50](https://git
 
 ***Demo***
 
-Download the pretrained model from [GoogleDrive]() and put it under `${DATA_ROOT}/output/models/`.
+Download the pretrained model from [GoogleDrive](https://drive.google.com/drive/folders/1ReLzYJVhhEirEH5bMM2a4L_N_GJs86Go?usp=sharing) and put it under `${DATA_ROOT}/output/models/`.
 
 ```console
 ❱❱❱ python demo.py --gpu 1 --epoch 10 
 ```
 Then, the visualized heatmaps will be generated in the `vis_dir` folder. 
+
+<p align="center">
+<img src="examples/framework.jpg" width="88%" />
+</p>
 
 ***Training***
 ```console
