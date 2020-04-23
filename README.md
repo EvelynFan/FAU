@@ -42,10 +42,6 @@ Download the pretrained model from [GoogleDrive](https://drive.google.com/drive/
 ```
 Then, the visualized heatmaps will be generated in the `vis_dir` folder. 
 
-<p align="center">
-<img src="examples/framework.jpg" width="88%" />
-</p>
-
 ***Training***
 ```console
 ❱❱❱ python train.py --gpu 1
