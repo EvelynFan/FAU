@@ -27,20 +27,11 @@ For data preparation, please make a request for the [BP4D database](http://www.c
 
 ***Data Preprocessing***
 
-The [Dlib](http://dlib.net/) library is utilized to locate the 68 facial landmarks for defining AU locations. The face images are cropped and resized to 256*256 pixels. For annotation files, you need to convert them into json format and make them look like `[{imgpath:" ", AUs:[AU1_coord_x,AU1_coord_y,AU1_intensity, ...]}, ...]`. An example is provided in `examples/train_example.json`. 
+The [Dlib](http://dlib.net/) library is utilized to locate the 68 facial landmarks for defining AU locations. The face images are aligned and resized to 256*256 pixels. For annotation files, you need to convert them into json format and make them look like `[{imgpath:" ", AUs:[AU1_coord_x,AU1_coord_y,AU1_intensity, ...]}, ...]`. An example is provided in `examples/train_example.json`. 
 
 ***Backbone Model***
 
 The backbone model is initialized from the pretrained [ResNet-V1-50](https://github.com/tensorflow/models/tree/master/research/slim). Please download it under `${DATA_ROOT}`. You can change default path by modifying `config.py`.
-
-***Demo***
-
-Download the pretrained model from [GoogleDrive](https://drive.google.com/drive/folders/1ReLzYJVhhEirEH5bMM2a4L_N_GJs86Go?usp=sharing) and put it under `${DATA_ROOT}/output/models/`.
-
-```console
-❱❱❱ python demo.py --gpu 1 --epoch 10 
-```
-Then, the visualized heatmaps will be generated in the `vis_dir` folder. 
 
 ***Training***
 ```console
