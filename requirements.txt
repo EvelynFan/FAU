@@ -4,6 +4,6 @@ matplotlib
 setproctitle
 opencv-python
 pillow
-gast-0.3.3
+gast==0.3.3
 msgpack_numpy
 msgpack
